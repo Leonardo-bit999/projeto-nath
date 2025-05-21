@@ -13,7 +13,7 @@ export default function Tela1({ proximaTela }) {
 
       <div className="conteudo-tela">
          <motion.img
-          src = "/src/images/sol.gif"
+          src = "src/images/sol.gif"
           alt="Sol"
           className="img-sol"
           animate={{ y: [0, -5, 0] }}
