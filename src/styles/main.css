@@ -1,0 +1,314 @@
+body {
+  margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  max-height: 100%;
+  font-family: sans-serif;
+}
+
+.navegacao {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; /* ⬅ Aumentado para dar mais respiro */
+  margin-top: 40px;
+}
+
+/* --- Estrutura geral da tela 1 --- */
+.tela-1 {
+  background: linear-gradient(to top, #E1F5FE, #00bfff);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.img-sol {
+  width: 250px;
+  height: auto;
+  margin-bottom: 1px;
+}
+
+/* --- Conteúdo central da tela --- */
+.conteudo-tela {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Texto principal --- */
+.mensagem {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+/* --- Botão estilizado --- */
+.botao {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  background: linear-gradient(45deg, #FF69B4, #FF1493);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.botao:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* --- Tela 2 --- */
+.tela-2 {
+  background: linear-gradient(to top, #19e5e6, #E3F2FD);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.img-remadora {
+  width: 350px;
+  height: auto;
+  margin-bottom: 1px;
+}
+
+/* --- Tela 3 --- */
+.tela-3 {
+  background: linear-gradient(to top, #FFF0F5, #FFE4E1);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.chuva-granulado {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.granulado {
+  position: absolute;
+  top: -20px;
+  width: 4px;
+  height: 10px;
+  border-radius: 2px;
+  background-color: hsl(var(--hue), 70%, 60%);
+  animation: cairGranulado var(--dur) linear infinite;
+  transform: rotate(var(--rot));
+  opacity: 0.8;
+}
+
+@keyframes cairGranulado {
+  0% {
+    transform: translateY(0) rotate(var(--rot));
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(calc(var(--rot) * -1));
+    opacity: 0;
+  }
+}
+
+.img-brigadeiros {
+  width: 250px;
+  height: auto;
+  margin-bottom: 1px;
+}
+
+/* --- Tela 4 --- */
+.tela-4 {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  top: 0;
+  font-size: 1.4rem;
+  animation: flutuarLinear linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes flutuarLinear {
+  0% {
+    top: 100%;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: -10%;
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* --- Tela 5 --- */
+.tela-5 {
+ background: linear-gradient(135deg, #6dd5fa, #f9f9f9);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.fogos-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fogo {
+  position: absolute;
+  width: 25px;
+  height: 10px;
+  animation: explodir 2s ease-out infinite;
+  transform: translate(-50%, -50%);
+  animation-iteration-count: infinite;
+  animation-delay: inherit;
+}
+
+.fogo span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: hsl(var(--hue), 90%, 60%);
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  transform-origin: center;
+  animation: particula 1.2s ease-out infinite;
+}
+
+@keyframes explodir {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translate(-50%, -50%);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2) translate(-50%, -50%);
+  }
+}
+
+@keyframes particula {
+  0% {
+    transform: scale(0) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
+
+/* Posiciona e personaliza os fogos */
+.f1 { top: 20%; left: 30%; --hue: 0; animation-delay: 0s; }
+.f2 { top: 25%; left: 70%; --hue: 50; animation-delay: 1s; }
+.f3 { top: 50%; left: 50%; --hue: 120; animation-delay: 2s; }
+.f4 { top: 40%; left: 20%; --hue: 200; animation-delay: 3s; }
+.f5 { top: 35%; left: 80%; --hue: 300; animation-delay: 4s; }
+.f6 { top: 60%; left: 10%; --hue: 360; animation-delay: 5s; }
+.f7 { top: 70%; left: 90%; --hue: 30; animation-delay: 6s; }
+.f8 { top: 80%; left: 40%; --hue: 90; animation-delay: 7s; }
+.f9 { top: 90%; left: 60%; --hue: 150; animation-delay: 8s; }
+.f10 { top: 15%; left: 85%; --hue: 210; animation-delay: 9s; }
+
+.fogo span:nth-child(1)  { --x: 0px;  --y: -40px; }
+.fogo span:nth-child(2)  { --x: 28px; --y: -28px; }
+.fogo span:nth-child(3)  { --x: 40px; --y: 0px; }
+.fogo span:nth-child(4)  { --x: 28px; --y: 28px; }
+.fogo span:nth-child(5)  { --x: 0px;  --y: 40px; }
+.fogo span:nth-child(6)  { --x: -28px; --y: 28px; }
+.fogo span:nth-child(7)  { --x: -40px; --y: 0px; }
+.fogo span:nth-child(8)  { --x: -28px; --y: -28px; }
+.fogo span:nth-child(9)  { --x: 14px; --y: -40px; }
+.fogo span:nth-child(10) { --x: 40px; --y: -14px; }
+.fogo span:nth-child(11) { --x: 40px; --y: 14px; }
+.fogo span:nth-child(12) { --x: 14px; --y: 40px; }
+.fogo span:nth-child(13) { --x: -14px; --y: 40px; }
+.fogo span:nth-child(14) { --x: -40px; --y: 14px; }
+.fogo span:nth-child(15) { --x: -40px; --y: -14px; }
+.fogo span:nth-child(16) { --x: -14px; --y: -40px; }
+.fogo span:nth-child(17) { --x: 0px;  --y: -28px; }
+.fogo span:nth-child(18) { --x: 28px; --y: -14px; }
+.fogo span:nth-child(19) { --x: 14px; --y: -28px; }
+.fogo span:nth-child(20) { --x: -14px; --y: -28px; }
+
+/* --- Mensagem Secreta --- */
+.mensagem-secreta-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mensagem-secreta-box {
+  background: #fffafc;
+  color: #333;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1rem;
+  position: relative;
+  z-index: 11;
+}
