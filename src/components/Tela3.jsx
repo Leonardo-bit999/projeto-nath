@@ -38,7 +38,7 @@ export default function Tela3({ proximaTela, telaAnterior }) {
 
       <div className="conteudo-tela">
         <motion.img
-          src = "src/images/brigadeiros.gif"
+          src = "/images/brigadeiros.gif"
           alt="brigadeiros"
           className="img-brigadeiros"
           animate={{ y: [0, -5, 0] }}

@@ -12,7 +12,7 @@ export default function Tela2({ proximaTela, telaAnterior }) {
     >
       <div className="conteudo-tela">
         <motion.img
-          src = "src/images/remadora.png"
+          src = "/images/remadora.png"
           alt="Remadora"
           className="img-remadora"
           animate={{ y: [0, -5, 0] }}
