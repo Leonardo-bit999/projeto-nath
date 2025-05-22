@@ -312,3 +312,43 @@ body {
   position: relative;
   z-index: 11;
 }
+
+/* Responsividade para telas pequenas (celulares) */
+@media (max-width: 768px) {
+  .mensagem {
+    font-size: 1.3rem;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .botao {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 8px;
+  }
+
+  .conteudo-tela {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navegacao {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .img-sol,
+  .img-remadora,
+  .img-brigadeiros {
+    width: 180px;
+    height: auto;
+  }
+
+  .mensagem-secreta-box {
+    max-width: 90%;
+    font-size: 0.95rem;
+    padding: 20px;
+  }
+}
